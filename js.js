@@ -1,6 +1,6 @@
 const width = 16;
 const cell_height = 16;
-const number_bombs = 15;
+const number_bombs = 20;
 const cell_size = 18;
 let stopTimer = false;
 let stopTimerBomb = false;
@@ -9,6 +9,9 @@ let gameStart = true;
 const restartBtn = document.getElementById('face');
 
 let bombs = getBombs(width * cell_height, number_bombs);
+let cellsCount = width * cell_height;
+let closedCount = cellsCount;
+
 function getBombs(fieldSize, bombsCount) {
   return [...Array(fieldSize).keys()]
     .sort(() => Math.random() - 0.5)
@@ -77,10 +80,15 @@ function openCell(row, column) {
     outNum();
     gameStart = false;
     restartBtn.classList.add('face-sad');
-    console.log();
+
     return;
   }
-
+  closedCount--;
+  if (closedCount <= number_bombs) {
+    restartBtn.classList.add('win-face');
+    stopTimerBomb = true;
+    return;
+  }
   const count = getCount(row, column);
 
   if (count !== 0) {
@@ -169,6 +177,7 @@ field.addEventListener('contextmenu', (event) => {
 
 restartBtn.addEventListener('mousedown', (e) => {
   e.target.classList.remove('face-sad');
+  e.target.classList.remove('win-face');
   e.target.classList.add('face-smile');
 });
 
@@ -279,7 +288,6 @@ function countingQuantity(quantity) {
   let firstNumber = 10;
   let secondNumberQuantity = 4;
   let thirdNumber = 10;
-  console.log(quantity);
 
   if (firstNumber <= 10 && firstNumber !== 0) {
     firstNumber = firstNumber - lastDigit;
@@ -301,9 +309,6 @@ function countingQuantity(quantity) {
   } else if (quantity <= 39) {
     secondNumberQuantity = 0;
   }
-
-  console.log('firstNumber', firstNumber);
-  console.log(secondNumberQuantity);
 
   if (firstNumber <= 10) {
     for (let index = 0; index < 10; index++) {
