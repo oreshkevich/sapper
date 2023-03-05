@@ -153,14 +153,13 @@ function isValid(row, column) {
   return row >= 0 && row < cell_height && column >= 0 && column < width;
 }
 
-let quantity;
 field.addEventListener('contextmenu', (event) => {
   if (gameStart) {
     event.preventDefault();
-    quantity = document.querySelectorAll('.field .flag').length;
-
+    let quantity = 0;
     if (quantity < 40) {
       event.target.classList.toggle('flag');
+      quantity = document.querySelectorAll('.field .flag').length;
       countingQuantity(quantity);
     } else {
       event.target.classList.remove('flag');
@@ -285,10 +284,13 @@ function countingQuantity(quantity) {
   if (firstNumber <= 10 && firstNumber !== 0) {
     firstNumber = firstNumber - lastDigit;
   }
+
   if (firstNumber === 10) {
     firstNumber = 9;
   }
+
   if (quantity === 0) {
+    firstNumber = 0;
     secondNumberQuantity = 4;
   } else if (quantity <= 9) {
     secondNumberQuantity = 3;
@@ -304,11 +306,15 @@ function countingQuantity(quantity) {
   console.log(secondNumberQuantity);
 
   if (firstNumber <= 10) {
-    secondsOnes.classList.remove(`time${firstNumber + 1}`);
+    for (let index = 0; index < 10; index++) {
+      secondsOnes.classList.remove(`time${index}`);
+    }
     secondsOnes.classList.add(`time${firstNumber}`);
 
     if (firstNumber === 0) {
-      secondsOnes.classList.remove(`time${firstNumber}`);
+      for (let index = 0; index < 10; index++) {
+        secondsOnes.classList.remove(`time${index}`);
+      }
     }
   }
   if (secondNumberQuantity <= 4) {
