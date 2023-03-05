@@ -21,13 +21,17 @@ body {
   font-size: 14px;
 }
 
+button {
+  cursor: pointer;
+}
+
 img {
   display: block;
   max-width: 100%;
 }
 
 .container {
-  max-width: 408px;
+  max-width: 299px;
   width: 100%;
   margin: 100px auto;
   /* padding: 0 15px; */
@@ -48,7 +52,7 @@ img {
 }
 
 .button {
-  background-size: 11vw;
+  /* background-size: 11vw; */
 }
 
 .header__wrapper {
@@ -59,20 +63,19 @@ img {
   cursor: pointer;
 }
 
-.icon {
-  width: 35px;
-  height: 33px;
+#face {
+  cursor: pointer;
+  width: 34px;
+  height: 32px;
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: 0px -30px;
-  background-size: 10vw;
+}
+
+.icon {
+  background-position: 2px -23px;
 }
 
 .face-smile {
-  width: 35px;
-  height: 33px;
-  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -33px -30px;
-  background-size: 10vw;
+  background-position: -25px -23px;
 }
 
 .flag {
@@ -87,37 +90,37 @@ img {
 
 .one {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: 0px -90px;
+  background-position: 139px -68px;
 }
 
 .two {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -22px -90px;
+  background-position: 121px -68px;
 }
 
 .three {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -45px -90px;
+  background-position: 105px -68px;
 }
 
 .four {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -67px -90px;
+  background-position: 87px -68px;
 }
 
 .five {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -92px -90px;
+  background-position: 70px -68px;
 }
 
 .six {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -112px -89px;
+  background-position: 54px -68px;
 }
 
 .seven {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -137px -90px;
+  background-position: 36px -69px;
 }
 
 .all {
@@ -129,12 +132,12 @@ img {
 
 .bomb {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -113px -67px;
+  background-position: -86px -136px;
 }
 
 .explosion {
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -136px -66px;
+  background-position: -104px -135px;
 }
 
 .time-game {
@@ -203,17 +206,9 @@ img {
 }
 
 .face-sad {
-  width: 35px;
-  height: 33px;
-  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -130px -30px;
-  background-size: 10vw;
+  background-position: -106px -23px;
 }
 
 .face-surprise {
-  width: 35px;
-  height: 33px;
-  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
-  background-position: -65px -30px;
-  background-size: 10vw;
+  background-position: -52px -23px;
 }
