@@ -12,7 +12,7 @@ let bombs = getBombs(width * cell_height, number_bombs);
 let cellsCount = width * cell_height;
 
 let closedCount = cellsCount;
-console.log(closedCount);
+
 function getBombs(fieldSize, bombsCount) {
   return [...Array(fieldSize).keys()]
     .sort(() => Math.random() - 0.5)
@@ -168,6 +168,9 @@ field.addEventListener('contextmenu', (event) => {
     let quantity = 0;
     if (quantity < 40) {
       event.target.classList.toggle('flag');
+      // if (event.target.classList.contains('flag')) {
+      //   event.target.classList.toggle('question');
+      // }
       quantity = document.querySelectorAll('.field .flag').length;
       countingQuantity(quantity);
     } else {

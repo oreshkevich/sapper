@@ -216,3 +216,8 @@ img {
 .win-face {
   background-position: -78px -23px;
 }
+
+.question {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -51px -51px;
+}
