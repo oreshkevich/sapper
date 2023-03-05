@@ -10,8 +10,9 @@ const restartBtn = document.getElementById('face');
 
 let bombs = getBombs(width * cell_height, number_bombs);
 let cellsCount = width * cell_height;
-let closedCount = cellsCount;
 
+let closedCount = cellsCount;
+console.log(closedCount);
 function getBombs(fieldSize, bombsCount) {
   return [...Array(fieldSize).keys()]
     .sort(() => Math.random() - 0.5)
@@ -212,6 +213,7 @@ const clear = () => {
     // window.location.reload();
   });
   bombs = getBombs(width * cell_height, number_bombs);
+  closedCount = cellsCount;
 };
 
 const time = 10000;
