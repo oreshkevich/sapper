@@ -1,6 +1,6 @@
 const width = 16;
 const cell_height = 16;
-const number_bombs = 10;
+const number_bombs = 15;
 const cell_size = 18;
 let stopTimer = false;
 let stopTimerBomb = false;
@@ -153,13 +153,18 @@ function isValid(row, column) {
   return row >= 0 && row < cell_height && column >= 0 && column < width;
 }
 
+let quantity;
 field.addEventListener('contextmenu', (event) => {
   if (gameStart) {
     event.preventDefault();
-    event.target.classList.toggle('flag');
-    let quantity = document.querySelectorAll('.field .flag').length;
+    quantity = document.querySelectorAll('.field .flag').length;
 
-    countingQuantity(quantity);
+    if (quantity < 40) {
+      event.target.classList.toggle('flag');
+      countingQuantity(quantity);
+    } else {
+      event.target.classList.remove('flag');
+    }
   }
 });
 
@@ -169,7 +174,6 @@ restartBtn.addEventListener('mousedown', (e) => {
 });
 
 restartBtn.addEventListener('mouseup', (e) => {
-  // if (event.button === 2) {
   stopTimerBomb = false;
 
   stopTimer = true;
@@ -179,7 +183,6 @@ restartBtn.addEventListener('mouseup', (e) => {
   e.target.classList.remove('face-smile');
   clear();
   gameStart = true;
-  // }
 });
 
 const clear = () => {
@@ -275,37 +278,41 @@ function countingQuantity(quantity) {
 
   let lastDigit = quantity.toString().slice(-1);
   let firstNumber = 10;
-  let secondNumber = 4;
+  let secondNumberQuantity = 4;
   let thirdNumber = 10;
+  console.log(quantity);
+
   if (firstNumber <= 10 && firstNumber !== 0) {
     firstNumber = firstNumber - lastDigit;
-  } else {
+  }
+  if (firstNumber === 10) {
     firstNumber = 9;
-    secondNumber -= 1;
   }
-  if (firstNumber !== 10) {
-    secondNumber = 3;
+  if (quantity === 0) {
+    secondNumberQuantity = 4;
+  } else if (quantity <= 9) {
+    secondNumberQuantity = 3;
+  } else if (quantity <= 19) {
+    secondNumberQuantity = 2;
+  } else if (quantity <= 29) {
+    secondNumberQuantity = 1;
+  } else if (quantity <= 39) {
+    secondNumberQuantity = 0;
   }
-  // if (secondNumber === 9) {
-  //   secondNumber = 9;
-  //   thirdNumber -= 1;
-  // }
+
+  console.log('firstNumber', firstNumber);
+  console.log(secondNumberQuantity);
+
   if (firstNumber <= 10) {
     secondsOnes.classList.remove(`time${firstNumber + 1}`);
     secondsOnes.classList.add(`time${firstNumber}`);
 
     if (firstNumber === 0) {
       secondsOnes.classList.remove(`time${firstNumber}`);
-      // secondsOnes.classList.add(`time${0}`);
     }
   }
-  if (secondNumber < 4) {
-    secondsTens.classList.remove(`time${4}`);
-    secondsTens.classList.add(`time${secondNumber}`);
-
-    if (secondNumber === 10) {
-      secondsTens.classList.remove(`time${secondNumber}`);
-      secondsTens.classList.add(`time${0}`);
-    }
+  if (secondNumberQuantity <= 4) {
+    secondsTens.classList.remove(`time${secondNumberQuantity + 1}`);
+    secondsTens.classList.add(`time${secondNumberQuantity}`);
   }
 }
