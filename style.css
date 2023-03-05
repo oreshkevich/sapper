@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  font-style: normal;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-size: 14px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 408px;
+  width: 100%;
+  margin: 100px auto;
+  /* padding: 0 15px; */
+  text-align: center;
+  border: 5px solid grey;
+  border-style: outset;
+  cursor: pointer;
+  background-color: silver;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: repeat(16, 28px);
+}
+
+.header {
+  background-color: silver;
+}
+
+.button {
+  background-size: 10vw;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  border: 5px solid grey;
+  border-style: outset;
+  cursor: pointer;
+}
+
+.icon {
+  width: 35px;
+  height: 33px;
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: 0px -30px;
+  background-size: 9vw;
+}
+
+.face-smile {
+  width: 35px;
+  height: 33px;
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -33px -30px;
+  background-size: 9vw;
+}
+
+.flag {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -43px -66px;
+}
+
+.disabled {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -21px -66px;
+}
+
+.one {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: 0px -90px;
+}
+
+.two {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -22px -90px;
+}
+
+.three {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -45px -90px;
+}
+
+.four {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -67px -90px;
+}
+
+.five {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -92px -90px;
+}
+
+.six {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -112px -89px;
+}
+
+.seven {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -137px -90px;
+}
+
+.all {
+  width: 128px;
+  height: 128px;
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: 2px -23px;
+}
+
+.bomb {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -113px -67px;
+}
+
+.explosion {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -136px -66px;
+}
+
+.time-game {
+  display: flex;
+  padding-right: 10px;
+}
+
+.z100 .time-game div {
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  width: 17px;
+  height: 23px;
+}
+
+.time {
+  background-position: 14px 0;
+}
+
+.z100 .time0 {
+  background-position: 14px 0;
+}
+
+.z100 .time1 {
+  background-position: 1px 0;
+}
+
+.z100 .time2 {
+  background-position: -13px 0;
+}
+
+.z100 .time3 {
+  background-position: -26px 0;
+}
+
+.z100 .time4 {
+  background-position: -40px 0;
+}
+
+.z100 .time5 {
+  background-position: -54px 0;
+}
+
+.z100 .time6 {
+  background-position: -69px 0;
+}
+
+.z100 .time7 {
+  background-position: -84px 0;
+}
+
+.z100 .time8 {
+  background-position: -96px 0;
+}
+
+.z100 .time9 {
+  background-position: -109px 0;
+}
+
+.z100 .time10 {
+  background-position: -125px 0;
+}
+
+.z100 .time- {
+  background-position: -130px 0;
+  width: 13px;
+  height: 23px
+}
+
+.face-sad {
+  width: 35px;
+  height: 33px;
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -130px -30px;
+  background-size: 9vw;
+}
+
+.face-surprise {
+  width: 35px;
+  height: 33px;
+  background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
+  background-position: -65px -30px;
+  background-size: 9vw;
+}
