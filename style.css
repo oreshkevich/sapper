@@ -48,7 +48,7 @@ img {
 }
 
 .button {
-  background-size: 10vw;
+  background-size: 11vw;
 }
 
 .header__wrapper {
@@ -64,7 +64,7 @@ img {
   height: 33px;
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
   background-position: 0px -30px;
-  background-size: 9vw;
+  background-size: 10vw;
 }
 
 .face-smile {
@@ -72,7 +72,7 @@ img {
   height: 33px;
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
   background-position: -33px -30px;
-  background-size: 9vw;
+  background-size: 10vw;
 }
 
 .flag {
@@ -207,7 +207,7 @@ img {
   height: 33px;
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
   background-position: -130px -30px;
-  background-size: 9vw;
+  background-size: 10vw;
 }
 
 .face-surprise {
@@ -215,5 +215,5 @@ img {
   height: 33px;
   background-image: url(./assets/minesweeper-sprites_9TPZzv3.png);
   background-position: -65px -30px;
-  background-size: 9vw;
+  background-size: 10vw;
 }
